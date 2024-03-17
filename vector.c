@@ -68,3 +68,49 @@ int vector_find(Vector *v, data_type val)
 
     return -1;
 }
+
+data_type vector_max(Vector *v)
+{
+    return v->data[vector_argmax(v)];
+}
+
+data_type vector_min(Vector *v)
+{
+    return v->data[vector_argmin(v)];
+}
+
+int vector_argmax(Vector *v)
+{
+    int i;
+    int max = v->data[0];
+    int argmax = 0;
+
+    for (i = 0; i < v->size; i++)
+    {
+        if (v->data[i] > max)
+        {
+            max = v->data[i];
+            argmax = i;
+        }
+    }
+
+    return argmax;
+}
+
+int vector_argmin(Vector *v)
+{
+    int i;
+    int min = v->data[0];
+    int argmin = 0;
+
+    for (i = 0; i < v->size; i++)
+    {
+        if (v->data[i] < min)
+        {
+            min = v->data[i];
+            argmin = i;
+        }
+    }
+
+    return argmin;
+}
