@@ -14,9 +14,19 @@ int main()
         vector_push_back(v, i + 1);
     }
 
-    for (i = 0; i < 25; i++)
+    for (i = 0; i < vector_size(v); i++)
     {
-        printf("%d\n", v->data[i]);
+        printf("%d\n", vector_get(v, i));
+    }
+
+    for (i = 0; i < vector_size(v); i++)
+    {
+        vector_set(v, i, vector_get(v, i) * 2);
+    }
+
+    for (i = 0; i < vector_size(v); i++)
+    {
+        printf("%d\n", vector_get(v, i));
     }
 
     vector_destroy(v);
