@@ -3,7 +3,9 @@
 
 int main()
 {
-    int i;
+    int i, m, n;
+
+    scanf("%d %d", &m, &n);
 
     Vector *v = vector_construct();
 

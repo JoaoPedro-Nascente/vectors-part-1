@@ -56,3 +56,15 @@ void vector_set(Vector *v, int i, data_type val)
 
     v->data[i] = val;
 }
+int vector_find(Vector *v, data_type val)
+{
+    int i;
+
+    for (i = 0; i < v->size; i++)
+    {
+        if (v->data[i] == val)
+            return i;
+    }
+
+    return -1;
+}
